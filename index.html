@@ -1,0 +1,62 @@
+
+<header>
+    <nav>
+        <ul style="display: flex; justify-content: flex-start; gap: 1rem; list-style: none; padding: 0; background-color: #f8f9fa; margin: 0; border-bottom: 1px solid #ddd;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="riddle_generator.html">Riddle Generator</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="about">
+    <h2>Why I Love Snowboarding</h2>
+    <p>Snowboarding is my passion. I love the thrill of jumping off ramps, gliding effortlessly through fresh powder, and challenging myself in the park. It's not just a sport—it's a lifestyle that connects me to nature, pushes my limits, and brings pure joy with every run.</p>
+    <ol>
+        <li>Reasons I love snowboarding:
+            <ul>
+                <li>Freedom and connection to nature</li>
+                <li>Excitement of mastering new tricks</li>
+                <li>Adventurous community of fellow riders</li>
+            </ul>
+        </li>
+        <li>Snowboarding destinations I dream of visiting:
+            <ul>
+                <li>Whistler Blackcomb</li>
+                <li>Chamonix Mont-Blanc</li>
+                <li>Niseko, Japan</li>
+            </ul>
+        </li>
+    </ol>
+</section>
+
+<section id="tableau">
+    <h2>Snowboarding Insights</h2>
+    <canvas id="snowfallChart" width="800" height="400"></canvas>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const ctx = document.getElementById('snowfallChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Telluride', 'Jackson Hole', 'Steamboat', 'Mammoth', 'Snowbird'],
+                datasets: [{
+                    label: 'Average Snowfall (inches)',
+                    data: [300, 350, 400, 450, 500],
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+</script>
